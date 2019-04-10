@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bootdo.shany.dao.VideoDAO">
+
+
+    <select id="count" resultType="int">
+        select count(*) from shany_video
+    </select>
+
+
+    <delete id="remove">
+		delete from shany_video where id = #{value}
+	</delete>
+
+    <delete id="batchRemove">
+        delete from shany_video where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+
+</mapper>

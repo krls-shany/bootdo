@@ -1,0 +1,30 @@
+{
+    "run": {
+        "default": "",
+        "items": [
+            {
+                "name": "bootdo",
+                "projectName": "bootdo",
+                "workingDirectory": "d:\\JAVA\\bootdo\\bootdo",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    },
+    "debug": {
+        "default": "",
+        "items": [
+            {
+                "name": "bootdo",
+                "projectName": "bootdo",
+                "workingDirectory": "d:\\JAVA\\bootdo\\bootdo",
+                "args": [],
+                "vmargs": [],
+                "env": {},
+                "preLaunchTask": ""
+            }
+        ]
+    }
+}
