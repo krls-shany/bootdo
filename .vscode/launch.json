@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - LastTime",
+            "request": "launch",
+            "mainClass": "com.bootdo.shany.test.LastTime",
+            "projectName": "bootdo"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - AudioUtil",
             "request": "launch",
             "mainClass": "com.bootdo.shany.util.AudioUtil",
