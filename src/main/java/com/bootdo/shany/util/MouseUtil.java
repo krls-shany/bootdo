@@ -33,9 +33,6 @@ public class MouseUtil {
             }
     }
 
-
-
-
     public static void main(String[] args) {
         try{
             //创建Windows命令打开记事本
