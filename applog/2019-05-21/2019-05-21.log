@@ -1780,3 +1780,95 @@
 2019-05-21 17:17:00 -<==      Total: 1
 2019-05-21 17:17:00 -耗时 : 4
 2019-05-21 17:17:00 -返回值 : com.bootdo.common.utils.PageUtils@79e7b24c
+2019-05-21 17:39:44 -WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 21], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 3], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 5, completed tasks = 442]
+2019-05-21 17:43:25 -请求地址 : http://localhost:8124/common/sysFile/upload
+2019-05-21 17:43:25 -HTTP METHOD : POST
+2019-05-21 17:43:25 -CLASS_METHOD : com.bootdo.common.controller.FileController.upload
+2019-05-21 17:43:25 -参数 : [org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@57e4a9d0, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest@626f7c0b]
+2019-05-21 17:43:25 -==>  Preparing: insert into sys_file ( `type`, `url`, `create_date` ) values ( ?, ?, ? ) 
+2019-05-21 17:43:25 -==> Parameters: 0(Integer), /files/5c3113e7-8da3-4413-bfea-422d6e68c5f5.jpg(String), 2019-05-21 17:43:25.159(Timestamp)
+2019-05-21 17:43:25 -<==    Updates: 1
+2019-05-21 17:43:25 -耗时 : 7
+2019-05-21 17:43:25 -返回值 : {msg=操作成功, fileName=/files/5c3113e7-8da3-4413-bfea-422d6e68c5f5.jpg, code=0}
+2019-05-21 17:43:25 -==>  Preparing: select distinct m.perms from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id = ur.role_id where ur.user_id = ? 
+2019-05-21 17:43:25 -==> Parameters: 138(Long)
+2019-05-21 17:43:25 -<==      Total: 47
+2019-05-21 17:43:25 -请求地址 : http://localhost:8124/common/sysFile/list
+2019-05-21 17:43:25 -HTTP METHOD : GET
+2019-05-21 17:43:25 -CLASS_METHOD : com.bootdo.common.controller.FileController.list
+2019-05-21 17:43:25 -参数 : [{limit=12, offset=0, type=}]
+2019-05-21 17:43:25 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file order by id desc limit ?, ? 
+2019-05-21 17:43:25 -==> Parameters: 0(Integer), 12(Integer)
+2019-05-21 17:43:25 -<==      Total: 5
+2019-05-21 17:43:25 -==>  Preparing: select count(*) from sys_file 
+2019-05-21 17:43:25 -==> Parameters: 
+2019-05-21 17:43:25 -<==      Total: 1
+2019-05-21 17:43:25 -耗时 : 5
+2019-05-21 17:43:25 -返回值 : com.bootdo.common.utils.PageUtils@69fc06bb
+2019-05-21 17:43:27 -请求地址 : http://localhost:8124/common/sysFile/upload
+2019-05-21 17:43:27 -HTTP METHOD : POST
+2019-05-21 17:43:27 -CLASS_METHOD : com.bootdo.common.controller.FileController.upload
+2019-05-21 17:43:27 -参数 : [org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@10bd32e1, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest@5b1092a8]
+2019-05-21 17:43:27 -==>  Preparing: insert into sys_file ( `type`, `url`, `create_date` ) values ( ?, ?, ? ) 
+2019-05-21 17:43:27 -==> Parameters: 0(Integer), /files/05a39638-0b16-4886-8abe-8cfa0d2503ed.jpg(String), 2019-05-21 17:43:27.898(Timestamp)
+2019-05-21 17:43:27 -<==    Updates: 1
+2019-05-21 17:43:27 -耗时 : 6
+2019-05-21 17:43:27 -返回值 : {msg=操作成功, fileName=/files/05a39638-0b16-4886-8abe-8cfa0d2503ed.jpg, code=0}
+2019-05-21 17:43:27 -请求地址 : http://localhost:8124/common/sysFile/list
+2019-05-21 17:43:27 -HTTP METHOD : GET
+2019-05-21 17:43:27 -CLASS_METHOD : com.bootdo.common.controller.FileController.list
+2019-05-21 17:43:27 -参数 : [{limit=12, offset=0, type=}]
+2019-05-21 17:43:27 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file order by id desc limit ?, ? 
+2019-05-21 17:43:27 -==> Parameters: 0(Integer), 12(Integer)
+2019-05-21 17:43:27 -<==      Total: 6
+2019-05-21 17:43:27 -==>  Preparing: select count(*) from sys_file 
+2019-05-21 17:43:27 -==> Parameters: 
+2019-05-21 17:43:27 -<==      Total: 1
+2019-05-21 17:43:27 -耗时 : 4
+2019-05-21 17:43:27 -返回值 : com.bootdo.common.utils.PageUtils@35070d22
+2019-05-21 17:43:36 -请求地址 : http://localhost:8124/common/sysFile/upload
+2019-05-21 17:43:36 -HTTP METHOD : POST
+2019-05-21 17:43:36 -CLASS_METHOD : com.bootdo.common.controller.FileController.upload
+2019-05-21 17:43:36 -参数 : [org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@2b84e09c, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest@2d69422c]
+2019-05-21 17:43:36 -==>  Preparing: insert into sys_file ( `type`, `url`, `create_date` ) values ( ?, ?, ? ) 
+2019-05-21 17:43:36 -==> Parameters: 0(Integer), /files/866d554d-9983-47b6-97b7-845da231078d.jpg(String), 2019-05-21 17:43:36.22(Timestamp)
+2019-05-21 17:43:36 -<==    Updates: 1
+2019-05-21 17:43:36 -耗时 : 7
+2019-05-21 17:43:36 -返回值 : {msg=操作成功, fileName=/files/866d554d-9983-47b6-97b7-845da231078d.jpg, code=0}
+2019-05-21 17:43:36 -请求地址 : http://localhost:8124/common/sysFile/list
+2019-05-21 17:43:36 -HTTP METHOD : GET
+2019-05-21 17:43:36 -CLASS_METHOD : com.bootdo.common.controller.FileController.list
+2019-05-21 17:43:36 -参数 : [{limit=12, offset=0, type=}]
+2019-05-21 17:43:36 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file order by id desc limit ?, ? 
+2019-05-21 17:43:36 -==> Parameters: 0(Integer), 12(Integer)
+2019-05-21 17:43:36 -<==      Total: 7
+2019-05-21 17:43:36 -==>  Preparing: select count(*) from sys_file 
+2019-05-21 17:43:36 -==> Parameters: 
+2019-05-21 17:43:36 -<==      Total: 1
+2019-05-21 17:43:36 -耗时 : 3
+2019-05-21 17:43:36 -返回值 : com.bootdo.common.utils.PageUtils@62c4f2f7
+2019-05-21 17:43:45 -请求地址 : http://localhost:8124/common/sysFile/upload
+2019-05-21 17:43:45 -HTTP METHOD : POST
+2019-05-21 17:43:45 -CLASS_METHOD : com.bootdo.common.controller.FileController.upload
+2019-05-21 17:43:45 -参数 : [org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@691c832d, org.springframework.web.multipart.support.StandardMultipartHttpServletRequest@5fc6509c]
+2019-05-21 17:43:45 -==>  Preparing: insert into sys_file ( `type`, `url`, `create_date` ) values ( ?, ?, ? ) 
+2019-05-21 17:43:45 -==> Parameters: 0(Integer), /files/84f19915-f09f-475b-af00-af40dbcc23d5.jpg(String), 2019-05-21 17:43:45.204(Timestamp)
+2019-05-21 17:43:45 -<==    Updates: 1
+2019-05-21 17:43:45 -耗时 : 6
+2019-05-21 17:43:45 -返回值 : {msg=操作成功, fileName=/files/84f19915-f09f-475b-af00-af40dbcc23d5.jpg, code=0}
+2019-05-21 17:43:45 -请求地址 : http://localhost:8124/common/sysFile/list
+2019-05-21 17:43:45 -HTTP METHOD : GET
+2019-05-21 17:43:45 -CLASS_METHOD : com.bootdo.common.controller.FileController.list
+2019-05-21 17:43:45 -参数 : [{limit=12, offset=0, type=}]
+2019-05-21 17:43:45 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file order by id desc limit ?, ? 
+2019-05-21 17:43:45 -==> Parameters: 0(Integer), 12(Integer)
+2019-05-21 17:43:45 -<==      Total: 8
+2019-05-21 17:43:45 -==>  Preparing: select count(*) from sys_file 
+2019-05-21 17:43:45 -==> Parameters: 
+2019-05-21 17:43:45 -<==      Total: 1
+2019-05-21 17:43:45 -耗时 : 4
+2019-05-21 17:43:45 -返回值 : com.bootdo.common.utils.PageUtils@262081f5
+2019-05-21 18:00:00 -[INFO]:you need relax 2 min
+2019-05-21 18:09:02 -Validating all active sessions...
+2019-05-21 18:09:02 -Finished session validation.  No sessions were stopped.
+2019-05-21 18:09:44 -WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 2 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(2)-CONNECTED(2)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 21], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 3], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 5, completed tasks = 876]
