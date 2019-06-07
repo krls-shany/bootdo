@@ -117,6 +117,6 @@ public class AudioUtil {
 
 		public static void main(String[] args) {
 			// System.out.println("[out]:"+audioListen());
-			AudioUtil.audioPlayer("请注意现在是1月23日23时55分，还有5分钟");
+			// AudioUtil.audioPlayer("大家好我叫杨璠，今年午睡了");
 		}
 }
