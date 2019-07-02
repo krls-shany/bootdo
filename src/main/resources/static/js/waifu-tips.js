@@ -26,9 +26,9 @@ $('.waifu-tool .fa-comments').click(function(){
 });
 var cloth_num=1;
 $('.waifu-tool .fa-street-view').click(function (){
-    // if(model_p===22) loadlive2d('live2d','/model/model33-'+cloth_num+'.json'); else loadlive2d('live2d','/model/model22-'+cloth_num+'.json');
+    if(model_p===22) loadlive2d('live2d','/model/model33-'+cloth_num+'.json'); else loadlive2d('live2d','/model/model22-'+cloth_num+'.json');
     // change dynamic get json function
-    if(model_p===22) loadlive2d('live2d',getJson(33,cloth_num)); else loadlive2d('live2d',getJson(22,cloth_num));
+    // if(model_p===22) loadlive2d('live2d',getJsonFile(33,cloth_num)); else loadlive2d('live2d',getJsonFile(22,cloth_num));
     // if(model_p===22) loadlive2d('live2d',getModel(22,null)); else loadlive2d('live2d',getModel(33,null));
     // if(model_p===22) loadlive2d('live2d','/model/api.php?p=33&model=rand'); else loadlive2d('live2d','/model/api.php?p=22&model=rand');
     cloth_num=(cloth_num)%15+1;
@@ -59,6 +59,7 @@ $('.waifu-tool .fa-close').click(function(){
 });
 loadlive2d('live2d','/model/model33.json');
 
+//not use
 //获取指定格式的json对象
 function getJson(name,num){
     name=parseInt(name);
@@ -67,10 +68,20 @@ function getJson(name,num){
         name=22;
     if(num==null||num<0||num>16)
         num=1;
-    var jsonDate='{"model":"'+name+'/'+name+'.v2.moc","textures":["'+name+'/textures/texture_00.png","'+name+'/textures/texture_01/'+num+'.png","'+name+'/textures/texture_02/'+num+'.png","'+name+'/textures/texture_03/'+num+'.png"],"hit_areas_custom":{"head_x":[-0.35,0.6],"head_y":[0.19,-0.2],"body_x":[-0.3,-0.25],"body_y":[0.3,-0.9]},"layout":{"center_x":-0.05,"center_y":0.25,"height":2.7},"motions":{"idle":[{"file":"'+name+'/'+name+'.v2.idle-01.mtn","fade_in":2000,"fade_out":2000},{"file":"'+name+'/'+name+'.v2.idle-02.mtn","fade_in":2000,"fade_out":2000},{"file":"'+name+'/'+name+'.v2.idle-03.mtn","fade_in":100,"fade_out":100}],"tap_body":[{"file":"'+name+'/'+name+'.v2.touch.mtn","fade_in":150,"fade_out":100}],"thanking":[{"file":"'+name+'/'+name+'.v2.thanking.mtn","fade_in":2000,"fade_out":2000}]}}';        
-    return eval(jsonDate);
+    var jsonDate='{"model":"'+name+'/'+name+'.v2.moc","textures":["'+name+'/textures/texture_00.png","'+name+'/textures/texture_01/'+num+'.png","'+name+'/textures/texture_02/'+num+'.png","'+name+'/textures/texture_03/'+num+'.png"],"hit_areas_custom":{"head_x":[-0.35,0.6],"head_y":[0.19,-0.2],"body_x":[-0.3,-0.25],"body_y":[0.3,-0.9]},"layout":{"center_x":-0.05,"center_y":0.25,"height":2.7},"motions":{"idle":[{"file":"'+name+'/'+name+'.v2.idle-01.mtn","fade_in":2000,"fade_out":2000},{"file":"'+name+'/'+name+'.v2.idle-02.mtn","fade_in":2000,"fade_out":2000},{"file":"'+name+'/'+name+'.v2.idle-03.mtn","fade_in":100,"fade_out":100}],"tap_body":[{"file":"'+name+'/'+name+'.v2.touch.mtn","fade_in":150,"fade_out":100}],"thanking":[{"file":"'+name+'/'+name+'.v2.thanking.mtn","fade_in":2000,"fade_out":2000}]}}';   
+    //console.log(jsonDate);     
+    return JSON.parse(jsonDate);
 }
 
+//not use
+function getJsonFile(name,num){
+    var date=getJson(name,num);
+    var fso=new ActiveXObject(Scripting.FileSystemObject);
+    var f=fso.createtextfile("C:/a.json",2,true);
+    f.writeLine(date);
+    f.close();
+    return "c:/a.json"
+}
 
 
 // 判断是否是手机端
@@ -195,6 +206,7 @@ jQuery(document).ready(function($){
     });
 });
 jQuery(document).ready(function($){
+    //执行显示名言的定时器
     window.setInterval(function(){showMessage(showHitokoto());},25000);
     var stat_click = 0;
     $("#live2d").click(function(){
@@ -211,14 +223,14 @@ jQuery(document).ready(function($){
             var i1 = Math.floor(Math.random()*s.length);
             var i2 = Math.floor(Math.random()*s.length);
             if(moveStatus){  
-                $(".waifu").animate({
-                left:(document.body.offsetWidth-210)/2*(1+s[i1]),
-                top:(window.innerHeight-240)-(window.innerHeight-240)/2*(1-s[i2])
-                },
-                {
-                    duration:500,
-                    complete:showMessage(msgs[i])
-                });
+                // $(".waifu").animate({
+                // left:(document.body.offsetWidth-210)/2*(1+s[i1]),
+                // top:(window.innerHeight-240)-(window.innerHeight-240)/2*(1-s[i2])
+                // },
+                // {
+                //     duration:500,
+                //     complete:showMessage(msgs[i])
+                // });
             }else{
                 msgs = ["坏人放开我","再摸的话我可要报警了！⌇●﹏●⌇","别摸我，有什么好摸的！","惹不起你，我也躲不了了？","不要摸我了，我会告诉shany的！","干嘛动我呀！"];
                 var i = Math.floor(Math.random()*msgs.length);
@@ -230,7 +242,7 @@ jQuery(document).ready(function($){
     });
 });
 var ismove = false;
-//移动人物
+//鼠标拖拽移动人物
 jQuery(document).ready(function($){
     var box=$('.waifu')[0];
     var topCount = 20;
