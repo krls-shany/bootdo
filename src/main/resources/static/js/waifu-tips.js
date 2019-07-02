@@ -223,14 +223,14 @@ jQuery(document).ready(function($){
             var i1 = Math.floor(Math.random()*s.length);
             var i2 = Math.floor(Math.random()*s.length);
             if(moveStatus){  
-                // $(".waifu").animate({
-                // left:(document.body.offsetWidth-210)/2*(1+s[i1]),
-                // top:(window.innerHeight-240)-(window.innerHeight-240)/2*(1-s[i2])
-                // },
-                // {
-                //     duration:500,
-                //     complete:showMessage(msgs[i])
-                // });
+                $(".waifu").animate({
+                left:(document.body.offsetWidth-210)/2*(1+s[i1]),
+                top:(window.innerHeight-240)-(window.innerHeight-240)/2*(1-s[i2])
+                },
+                {
+                    duration:500,
+                    complete:showMessage(msgs[i])
+                });
             }else{
                 msgs = ["坏人放开我","再摸的话我可要报警了！⌇●﹏●⌇","别摸我，有什么好摸的！","惹不起你，我也躲不了了？","不要摸我了，我会告诉shany的！","干嘛动我呀！"];
                 var i = Math.floor(Math.random()*msgs.length);
