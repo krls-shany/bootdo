@@ -26,10 +26,12 @@ $('.waifu-tool .fa-comments').click(function(){
 });
 var cloth_num=1;
 $('.waifu-tool .fa-street-view').click(function (){
-    if(model_p===22) loadlive2d('live2d','/model/model33-'+cloth_num+'.json'); else loadlive2d('live2d','/model/model22-'+cloth_num+'.json');
+    // if(model_p===22) loadlive2d('live2d','/model/model33-'+cloth_num+'.json'); else loadlive2d('live2d','/model/model22-'+cloth_num+'.json');
+    // change dynamic get json function
+    if(model_p===22) loadlive2d('live2d',getJson(33,cloth_num)); else loadlive2d('live2d',getJson(22,cloth_num));
     // if(model_p===22) loadlive2d('live2d',getModel(22,null)); else loadlive2d('live2d',getModel(33,null));
     // if(model_p===22) loadlive2d('live2d','/model/api.php?p=33&model=rand'); else loadlive2d('live2d','/model/api.php?p=22&model=rand');
-    cloth_num=(cloth_num)%6+1;
+    cloth_num=(cloth_num)%15+1;
     showMessage('我的新衣服好看嘛',4000);
 });
 var moveStatus=true;
@@ -56,6 +58,20 @@ $('.waifu-tool .fa-close').click(function(){
     window.setTimeout(function(){$('.waifu').hide();},1000);
 });
 loadlive2d('live2d','/model/model33.json');
+
+//获取指定格式的json对象
+function getJson(name,num){
+    name=parseInt(name);
+    num=parseInt(num);
+    if(name!=22||name!=33)
+        name=22;
+    if(num==null||num<0||num>16)
+        num=1;
+    var jsonDate='{"model":"'+name+'/'+name+'.v2.moc","textures":["'+name+'/textures/texture_00.png","'+name+'/textures/texture_01/'+num+'.png","'+name+'/textures/texture_02/'+num+'.png","'+name+'/textures/texture_03/'+num+'.png"],"hit_areas_custom":{"head_x":[-0.35,0.6],"head_y":[0.19,-0.2],"body_x":[-0.3,-0.25],"body_y":[0.3,-0.9]},"layout":{"center_x":-0.05,"center_y":0.25,"height":2.7},"motions":{"idle":[{"file":"'+name+'/'+name+'.v2.idle-01.mtn","fade_in":2000,"fade_out":2000},{"file":"'+name+'/'+name+'.v2.idle-02.mtn","fade_in":2000,"fade_out":2000},{"file":"'+name+'/'+name+'.v2.idle-03.mtn","fade_in":100,"fade_out":100}],"tap_body":[{"file":"'+name+'/'+name+'.v2.touch.mtn","fade_in":150,"fade_out":100}],"thanking":[{"file":"'+name+'/'+name+'.v2.thanking.mtn","fade_in":2000,"fade_out":2000}]}}';        
+    return eval(jsonDate);
+}
+
+
 
 // 判断是否是手机端
 function isPhone(){
