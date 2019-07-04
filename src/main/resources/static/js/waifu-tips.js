@@ -83,6 +83,20 @@ function getJsonFile(name,num){
     return "c:/a.json"
 }
 
+//shany 调试模式
+function ctrlShany(){
+    function keyUp(e) { 
+        var currKey=0,e=e||event; 
+        currKey=e.keyCode||e.which||e.charCode; 
+        // var keyName = String.fromCharCode(currKey); 
+        // alert("按键码: " + currKey + " 字符: " + keyName);
+        //当拖拽人物，同时按住Y键的时候触发隐藏脚本
+        if(currKey==89){
+            
+        }
+    } 
+    this.document.onkeyup = keyUp;
+}
 
 // 判断是否是手机端
 function isPhone(){

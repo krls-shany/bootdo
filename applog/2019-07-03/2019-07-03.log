@@ -2058,3 +2058,1006 @@ Caused by: java.net.ConnectException: Connection refused: connect
 2019-07-03 03:33:45 -参数 : []
 2019-07-03 03:33:45 -耗时 : 0
 2019-07-03 03:33:45 -返回值 : main
+2019-07-03 03:42:51 -请求地址 : http://localhost:8124/blog
+2019-07-03 03:42:51 -HTTP METHOD : GET
+2019-07-03 03:42:51 -CLASS_METHOD : com.bootdo.blog.controller.BlogController.blog
+2019-07-03 03:42:51 -参数 : []
+2019-07-03 03:42:51 -耗时 : 0
+2019-07-03 03:42:51 -返回值 : blog/index/main
+2019-07-03 03:42:52 -请求地址 : http://localhost:8124/blog/open/list
+2019-07-03 03:42:52 -HTTP METHOD : GET
+2019-07-03 03:42:52 -CLASS_METHOD : com.bootdo.blog.controller.BlogController.opentList
+2019-07-03 03:42:52 -参数 : [{type=article, limit=10, offset=0}]
+2019-07-03 03:42:52 -==>  Preparing: select `cid`,`title`,`slug`,`created`,`modified`,`content`,`type`,`tags`,`categories`,`hits`,`comments_num`,`allow_comment`,`allow_ping`,`allow_feed`,`status`,`author`,`gtm_create`,`gtm_modified` from blog_content WHERE type = ? order by cid desc limit 0, 10 
+2019-07-03 03:42:52 -==> Parameters: article(String)
+2019-07-03 03:42:52 -<==      Total: 10
+2019-07-03 03:42:52 -==>  Preparing: select count(*) from blog_content WHERE type = ? 
+2019-07-03 03:42:52 -==> Parameters: article(String)
+2019-07-03 03:42:52 -<==      Total: 1
+2019-07-03 03:42:52 -耗时 : 31
+2019-07-03 03:42:52 -返回值 : com.bootdo.common.utils.PageUtils@6d9bd62d
+2019-07-03 03:42:58 -请求地址 : http://localhost:8124/login
+2019-07-03 03:42:58 -HTTP METHOD : GET
+2019-07-03 03:42:58 -CLASS_METHOD : com.bootdo.system.controller.LoginController.login
+2019-07-03 03:42:58 -参数 : [{}]
+2019-07-03 03:42:58 -耗时 : 0
+2019-07-03 03:42:58 -返回值 : login
+2019-07-03 03:42:59 -请求地址 : http://localhost:8124/login
+2019-07-03 03:42:59 -HTTP METHOD : POST
+2019-07-03 03:42:59 -CLASS_METHOD : com.bootdo.system.controller.LoginController.ajaxLogin
+2019-07-03 03:42:59 -参数 : [shany, 123456]
+2019-07-03 03:42:59 -==>  Preparing: select `user_id`,`username`,`name`,`password`,`dept_id`,`email`,`mobile`,`status`,`user_id_create`,`gmt_create`,`gmt_modified`,`sex`,`birth`,`pic_id`,`live_address`,`hobby`,`province`,`city`,`district` from sys_user WHERE username = ? order by user_id desc 
+2019-07-03 03:42:59 -==> Parameters: shany(String)
+2019-07-03 03:42:59 -<==      Total: 1
+2019-07-03 03:42:59 -耗时 : 4
+2019-07-03 03:42:59 -返回值 : {msg=操作成功, code=0}
+2019-07-03 03:42:59 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 03:42:59 -==> Parameters: 138(Long), shany(String), 登录(String), 4(Integer), com.bootdo.system.controller.LoginController.ajaxLogin()(String), null, 127.0.0.1(String), 2019-07-03 03:42:59.667(Timestamp)
+2019-07-03 03:42:59 -<==    Updates: 1
+2019-07-03 03:42:59 -请求地址 : http://localhost:8124/index
+2019-07-03 03:42:59 -HTTP METHOD : GET
+2019-07-03 03:42:59 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 03:42:59 -参数 : [{}]
+2019-07-03 03:42:59 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 03:42:59 -==> Parameters: 138(Long)
+2019-07-03 03:42:59 -<==      Total: 27
+2019-07-03 03:42:59 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 03:42:59 -==> Parameters: null
+2019-07-03 03:42:59 -<==      Total: 0
+2019-07-03 03:42:59 -耗时 : 6
+2019-07-03 03:42:59 -返回值 : index_v1
+2019-07-03 03:42:59 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 03:42:59 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 6(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 03:42:59.693(Timestamp)
+2019-07-03 03:42:59 -<==    Updates: 1
+2019-07-03 03:42:59 -请求地址 : http://localhost:8124/main
+2019-07-03 03:42:59 -HTTP METHOD : GET
+2019-07-03 03:42:59 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 03:42:59 -参数 : []
+2019-07-03 03:42:59 -耗时 : 0
+2019-07-03 03:42:59 -返回值 : main
+2019-07-03 03:42:59 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 03:42:59 -HTTP METHOD : GET
+2019-07-03 03:42:59 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 03:42:59 -参数 : []
+2019-07-03 03:42:59 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 03:42:59 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 03:42:59 -<==      Total: 0
+2019-07-03 03:42:59 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 03:42:59 -==> Parameters: 138(Long), 0(String)
+2019-07-03 03:42:59 -<==      Total: 1
+2019-07-03 03:42:59 -耗时 : 4
+2019-07-03 03:42:59 -返回值 : com.bootdo.common.utils.PageUtils@4c419740
+2019-07-03 04:00:00 -[INFO]:you need relax 2 min
+2019-07-03 04:00:05 -Validating all active sessions...
+2019-07-03 04:00:05 -Finished session validation.  No sessions were stopped.
+2019-07-03 04:00:39 -WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 12 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(12)-CONNECTED(12)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 141], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 23], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 5, completed tasks = 868]
+2019-07-03 04:25:42 -请求地址 : http://localhost:8124/login;JSESSIONID=ee2c0a30-357a-40f0-9613-4eb2900e8c79
+2019-07-03 04:25:42 -HTTP METHOD : GET
+2019-07-03 04:25:42 -CLASS_METHOD : com.bootdo.system.controller.LoginController.login
+2019-07-03 04:25:42 -参数 : [{}]
+2019-07-03 04:25:42 -耗时 : 1
+2019-07-03 04:25:42 -返回值 : login
+2019-07-03 04:25:43 -请求地址 : http://localhost:8124/login
+2019-07-03 04:25:43 -HTTP METHOD : GET
+2019-07-03 04:25:43 -CLASS_METHOD : com.bootdo.system.controller.LoginController.login
+2019-07-03 04:25:43 -参数 : [{}]
+2019-07-03 04:25:43 -耗时 : 0
+2019-07-03 04:25:43 -返回值 : login
+2019-07-03 04:25:43 -请求地址 : http://localhost:8124/login
+2019-07-03 04:25:43 -HTTP METHOD : POST
+2019-07-03 04:25:43 -CLASS_METHOD : com.bootdo.system.controller.LoginController.ajaxLogin
+2019-07-03 04:25:43 -参数 : [shany, 123456]
+2019-07-03 04:25:43 -==>  Preparing: select `user_id`,`username`,`name`,`password`,`dept_id`,`email`,`mobile`,`status`,`user_id_create`,`gmt_create`,`gmt_modified`,`sex`,`birth`,`pic_id`,`live_address`,`hobby`,`province`,`city`,`district` from sys_user WHERE username = ? order by user_id desc 
+2019-07-03 04:25:43 -==> Parameters: shany(String)
+2019-07-03 04:25:43 -<==      Total: 1
+2019-07-03 04:25:43 -耗时 : 16
+2019-07-03 04:25:43 -返回值 : {msg=操作成功, code=0}
+2019-07-03 04:25:43 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 04:25:43 -==> Parameters: 138(Long), shany(String), 登录(String), 16(Integer), com.bootdo.system.controller.LoginController.ajaxLogin()(String), null, 127.0.0.1(String), 2019-07-03 04:25:43.931(Timestamp)
+2019-07-03 04:25:43 -<==    Updates: 1
+2019-07-03 04:25:43 -请求地址 : http://localhost:8124/index
+2019-07-03 04:25:43 -HTTP METHOD : GET
+2019-07-03 04:25:43 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 04:25:43 -参数 : [{}]
+2019-07-03 04:25:43 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 04:25:43 -==> Parameters: 138(Long)
+2019-07-03 04:25:43 -<==      Total: 27
+2019-07-03 04:25:43 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 04:25:43 -==> Parameters: null
+2019-07-03 04:25:43 -<==      Total: 0
+2019-07-03 04:25:43 -耗时 : 12
+2019-07-03 04:25:43 -返回值 : index_v1
+2019-07-03 04:25:43 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 04:25:43 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 13(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 04:25:43.973(Timestamp)
+2019-07-03 04:25:43 -<==    Updates: 1
+2019-07-03 04:25:44 -请求地址 : http://localhost:8124/main
+2019-07-03 04:25:44 -HTTP METHOD : GET
+2019-07-03 04:25:44 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 04:25:44 -参数 : []
+2019-07-03 04:25:44 -耗时 : 1
+2019-07-03 04:25:44 -返回值 : main
+2019-07-03 04:25:44 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 04:25:44 -HTTP METHOD : GET
+2019-07-03 04:25:44 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 04:25:44 -参数 : []
+2019-07-03 04:25:44 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 04:25:44 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 04:25:44 -<==      Total: 0
+2019-07-03 04:25:44 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 04:25:44 -==> Parameters: 138(Long), 0(String)
+2019-07-03 04:25:44 -<==      Total: 1
+2019-07-03 04:25:44 -耗时 : 6
+2019-07-03 04:25:44 -返回值 : com.bootdo.common.utils.PageUtils@428667b7
+2019-07-03 04:25:51 -请求地址 : http://localhost:8124/blog
+2019-07-03 04:25:51 -HTTP METHOD : GET
+2019-07-03 04:25:51 -CLASS_METHOD : com.bootdo.blog.controller.BlogController.blog
+2019-07-03 04:25:51 -参数 : []
+2019-07-03 04:25:51 -耗时 : 1
+2019-07-03 04:25:51 -返回值 : blog/index/main
+2019-07-03 04:25:51 -请求地址 : http://localhost:8124/blog/open/list
+2019-07-03 04:25:51 -HTTP METHOD : GET
+2019-07-03 04:25:51 -CLASS_METHOD : com.bootdo.blog.controller.BlogController.opentList
+2019-07-03 04:25:51 -参数 : [{type=article, limit=10, offset=0}]
+2019-07-03 04:25:51 -==>  Preparing: select `cid`,`title`,`slug`,`created`,`modified`,`content`,`type`,`tags`,`categories`,`hits`,`comments_num`,`allow_comment`,`allow_ping`,`allow_feed`,`status`,`author`,`gtm_create`,`gtm_modified` from blog_content WHERE type = ? order by cid desc limit 0, 10 
+2019-07-03 04:25:51 -==> Parameters: article(String)
+2019-07-03 04:25:51 -<==      Total: 10
+2019-07-03 04:25:51 -==>  Preparing: select count(*) from blog_content WHERE type = ? 
+2019-07-03 04:25:51 -==> Parameters: article(String)
+2019-07-03 04:25:51 -<==      Total: 1
+2019-07-03 04:25:51 -耗时 : 28
+2019-07-03 04:25:51 -返回值 : com.bootdo.common.utils.PageUtils@abcc0e4
+2019-07-03 04:25:53 -请求地址 : http://localhost:8124/login
+2019-07-03 04:25:53 -HTTP METHOD : GET
+2019-07-03 04:25:53 -CLASS_METHOD : com.bootdo.system.controller.LoginController.login
+2019-07-03 04:25:53 -参数 : [{}]
+2019-07-03 04:25:53 -耗时 : 0
+2019-07-03 04:25:53 -返回值 : login
+2019-07-03 04:25:54 -请求地址 : http://localhost:8124/login
+2019-07-03 04:25:54 -HTTP METHOD : POST
+2019-07-03 04:25:54 -CLASS_METHOD : com.bootdo.system.controller.LoginController.ajaxLogin
+2019-07-03 04:25:54 -参数 : [shany, 123456]
+2019-07-03 04:25:54 -==>  Preparing: select `user_id`,`username`,`name`,`password`,`dept_id`,`email`,`mobile`,`status`,`user_id_create`,`gmt_create`,`gmt_modified`,`sex`,`birth`,`pic_id`,`live_address`,`hobby`,`province`,`city`,`district` from sys_user WHERE username = ? order by user_id desc 
+2019-07-03 04:25:54 -==> Parameters: shany(String)
+2019-07-03 04:25:54 -<==      Total: 1
+2019-07-03 04:25:54 -耗时 : 5
+2019-07-03 04:25:54 -返回值 : {msg=操作成功, code=0}
+2019-07-03 04:25:54 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 04:25:54 -==> Parameters: 138(Long), shany(String), 登录(String), 5(Integer), com.bootdo.system.controller.LoginController.ajaxLogin()(String), null, 127.0.0.1(String), 2019-07-03 04:25:54.437(Timestamp)
+2019-07-03 04:25:54 -<==    Updates: 1
+2019-07-03 04:25:54 -请求地址 : http://localhost:8124/index
+2019-07-03 04:25:54 -HTTP METHOD : GET
+2019-07-03 04:25:54 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 04:25:54 -参数 : [{}]
+2019-07-03 04:25:54 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 04:25:54 -==> Parameters: 138(Long)
+2019-07-03 04:25:54 -<==      Total: 27
+2019-07-03 04:25:54 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 04:25:54 -==> Parameters: null
+2019-07-03 04:25:54 -<==      Total: 0
+2019-07-03 04:25:54 -耗时 : 8
+2019-07-03 04:25:54 -返回值 : index_v1
+2019-07-03 04:25:54 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 04:25:54 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 8(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 04:25:54.467(Timestamp)
+2019-07-03 04:25:54 -<==    Updates: 1
+2019-07-03 04:25:54 -请求地址 : http://localhost:8124/main
+2019-07-03 04:25:54 -HTTP METHOD : GET
+2019-07-03 04:25:54 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 04:25:54 -参数 : []
+2019-07-03 04:25:54 -耗时 : 0
+2019-07-03 04:25:54 -返回值 : main
+2019-07-03 04:25:54 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 04:25:54 -HTTP METHOD : GET
+2019-07-03 04:25:54 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 04:25:54 -参数 : []
+2019-07-03 04:25:54 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 04:25:54 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 04:25:54 -<==      Total: 0
+2019-07-03 04:25:54 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 04:25:54 -==> Parameters: 138(Long), 0(String)
+2019-07-03 04:25:54 -<==      Total: 1
+2019-07-03 04:25:54 -耗时 : 5
+2019-07-03 04:25:54 -返回值 : com.bootdo.common.utils.PageUtils@20f67b89
+2019-07-03 04:26:46 -请求地址 : http://localhost:8124/index
+2019-07-03 04:26:46 -HTTP METHOD : GET
+2019-07-03 04:26:46 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 04:26:46 -参数 : [{}]
+2019-07-03 04:26:46 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 04:26:46 -==> Parameters: 138(Long)
+2019-07-03 04:26:46 -<==      Total: 27
+2019-07-03 04:26:46 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 04:26:46 -==> Parameters: null
+2019-07-03 04:26:46 -<==      Total: 0
+2019-07-03 04:26:46 -耗时 : 10
+2019-07-03 04:26:46 -返回值 : index_v1
+2019-07-03 04:26:46 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 04:26:46 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 10(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 04:26:46.032(Timestamp)
+2019-07-03 04:26:46 -<==    Updates: 1
+2019-07-03 04:26:46 -请求地址 : http://localhost:8124/main
+2019-07-03 04:26:46 -HTTP METHOD : GET
+2019-07-03 04:26:46 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 04:26:46 -参数 : []
+2019-07-03 04:26:46 -耗时 : 0
+2019-07-03 04:26:46 -返回值 : main
+2019-07-03 04:26:46 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 04:26:46 -HTTP METHOD : GET
+2019-07-03 04:26:46 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 04:26:46 -参数 : []
+2019-07-03 04:26:46 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 04:26:46 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 04:26:46 -<==      Total: 0
+2019-07-03 04:26:46 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 04:26:46 -==> Parameters: 138(Long), 0(String)
+2019-07-03 04:26:46 -<==      Total: 1
+2019-07-03 04:26:46 -耗时 : 6
+2019-07-03 04:26:46 -返回值 : com.bootdo.common.utils.PageUtils@571e20fc
+2019-07-03 04:26:46 -请求地址 : http://localhost:8124/main
+2019-07-03 04:26:46 -HTTP METHOD : GET
+2019-07-03 04:26:46 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 04:26:46 -参数 : []
+2019-07-03 04:26:46 -耗时 : 0
+2019-07-03 04:26:46 -返回值 : main
+2019-07-03 04:29:04 -请求地址 : http://localhost:8124/index
+2019-07-03 04:29:04 -HTTP METHOD : GET
+2019-07-03 04:29:04 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 04:29:04 -参数 : [{}]
+2019-07-03 04:29:04 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 04:29:04 -==> Parameters: 138(Long)
+2019-07-03 04:29:04 -<==      Total: 27
+2019-07-03 04:29:04 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 04:29:04 -==> Parameters: null
+2019-07-03 04:29:04 -<==      Total: 0
+2019-07-03 04:29:04 -耗时 : 9
+2019-07-03 04:29:04 -返回值 : index_v1
+2019-07-03 04:29:04 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 04:29:04 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 9(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 04:29:04.584(Timestamp)
+2019-07-03 04:29:04 -<==    Updates: 1
+2019-07-03 04:29:04 -请求地址 : http://localhost:8124/main
+2019-07-03 04:29:04 -HTTP METHOD : GET
+2019-07-03 04:29:04 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 04:29:04 -参数 : []
+2019-07-03 04:29:04 -耗时 : 1
+2019-07-03 04:29:04 -返回值 : main
+2019-07-03 04:29:05 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 04:29:05 -HTTP METHOD : GET
+2019-07-03 04:29:05 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 04:29:05 -参数 : []
+2019-07-03 04:29:05 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 04:29:05 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 04:29:05 -<==      Total: 0
+2019-07-03 04:29:05 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 04:29:05 -==> Parameters: 138(Long), 0(String)
+2019-07-03 04:29:05 -<==      Total: 1
+2019-07-03 04:29:05 -耗时 : 4
+2019-07-03 04:29:05 -返回值 : com.bootdo.common.utils.PageUtils@68abdf6f
+2019-07-03 04:29:05 -请求地址 : http://localhost:8124/main
+2019-07-03 04:29:05 -HTTP METHOD : GET
+2019-07-03 04:29:05 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 04:29:05 -参数 : []
+2019-07-03 04:29:05 -耗时 : 0
+2019-07-03 04:29:05 -返回值 : main
+2019-07-03 04:30:39 -WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 16 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(16)-CONNECTED(16)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 189], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 31], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 5, completed tasks = 1299]
+2019-07-03 04:35:45 -请求地址 : http://localhost:8124/index
+2019-07-03 04:35:45 -HTTP METHOD : GET
+2019-07-03 04:35:45 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 04:35:45 -参数 : [{}]
+2019-07-03 04:35:45 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 04:35:45 -==> Parameters: 138(Long)
+2019-07-03 04:35:45 -<==      Total: 27
+2019-07-03 04:35:45 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 04:35:45 -==> Parameters: null
+2019-07-03 04:35:45 -<==      Total: 0
+2019-07-03 04:35:45 -耗时 : 10
+2019-07-03 04:35:45 -返回值 : index_v1
+2019-07-03 04:35:45 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 04:35:45 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 10(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 04:35:45.41(Timestamp)
+2019-07-03 04:35:45 -<==    Updates: 1
+2019-07-03 04:35:45 -请求地址 : http://localhost:8124/main
+2019-07-03 04:35:45 -HTTP METHOD : GET
+2019-07-03 04:35:45 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 04:35:45 -参数 : []
+2019-07-03 04:35:45 -耗时 : 1
+2019-07-03 04:35:45 -返回值 : main
+2019-07-03 04:35:46 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 04:35:46 -HTTP METHOD : GET
+2019-07-03 04:35:46 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 04:35:46 -参数 : []
+2019-07-03 04:35:46 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 04:35:46 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 04:35:46 -<==      Total: 0
+2019-07-03 04:35:46 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 04:35:46 -==> Parameters: 138(Long), 0(String)
+2019-07-03 04:35:46 -<==      Total: 1
+2019-07-03 04:35:46 -耗时 : 5
+2019-07-03 04:35:46 -返回值 : com.bootdo.common.utils.PageUtils@740715db
+2019-07-03 04:35:46 -请求地址 : http://localhost:8124/main
+2019-07-03 04:35:46 -HTTP METHOD : GET
+2019-07-03 04:35:46 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 04:35:46 -参数 : []
+2019-07-03 04:35:46 -耗时 : 1
+2019-07-03 04:35:46 -返回值 : main
+2019-07-03 04:35:50 -请求地址 : http://localhost:8124/index
+2019-07-03 04:35:50 -HTTP METHOD : GET
+2019-07-03 04:35:50 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 04:35:50 -参数 : [{}]
+2019-07-03 04:35:50 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 04:35:50 -==> Parameters: 138(Long)
+2019-07-03 04:35:50 -<==      Total: 27
+2019-07-03 04:35:50 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 04:35:50 -==> Parameters: null
+2019-07-03 04:35:50 -<==      Total: 0
+2019-07-03 04:35:50 -耗时 : 11
+2019-07-03 04:35:50 -返回值 : index_v1
+2019-07-03 04:35:50 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 04:35:50 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 11(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 04:35:50.969(Timestamp)
+2019-07-03 04:35:50 -<==    Updates: 1
+2019-07-03 04:35:51 -请求地址 : http://localhost:8124/main
+2019-07-03 04:35:51 -HTTP METHOD : GET
+2019-07-03 04:35:51 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 04:35:51 -参数 : []
+2019-07-03 04:35:51 -耗时 : 2
+2019-07-03 04:35:51 -返回值 : main
+2019-07-03 04:35:51 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 04:35:51 -HTTP METHOD : GET
+2019-07-03 04:35:51 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 04:35:51 -参数 : []
+2019-07-03 04:35:51 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 04:35:51 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 04:35:51 -<==      Total: 0
+2019-07-03 04:35:51 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 04:35:51 -==> Parameters: 138(Long), 0(String)
+2019-07-03 04:35:51 -<==      Total: 1
+2019-07-03 04:35:51 -耗时 : 5
+2019-07-03 04:35:51 -返回值 : com.bootdo.common.utils.PageUtils@655fb99b
+2019-07-03 04:35:51 -请求地址 : http://localhost:8124/main
+2019-07-03 04:35:51 -HTTP METHOD : GET
+2019-07-03 04:35:51 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 04:35:51 -参数 : []
+2019-07-03 04:35:51 -耗时 : 0
+2019-07-03 04:35:51 -返回值 : main
+2019-07-03 04:39:15 -请求地址 : http://localhost:8124/index
+2019-07-03 04:39:15 -HTTP METHOD : GET
+2019-07-03 04:39:15 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 04:39:15 -参数 : [{}]
+2019-07-03 04:39:15 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 04:39:15 -==> Parameters: 138(Long)
+2019-07-03 04:39:15 -<==      Total: 27
+2019-07-03 04:39:15 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 04:39:15 -==> Parameters: null
+2019-07-03 04:39:15 -<==      Total: 0
+2019-07-03 04:39:15 -耗时 : 9
+2019-07-03 04:39:15 -返回值 : index_v1
+2019-07-03 04:39:15 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 04:39:15 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 9(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 04:39:15.927(Timestamp)
+2019-07-03 04:39:15 -<==    Updates: 1
+2019-07-03 04:39:16 -请求地址 : http://localhost:8124/main
+2019-07-03 04:39:16 -HTTP METHOD : GET
+2019-07-03 04:39:16 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 04:39:16 -参数 : []
+2019-07-03 04:39:16 -耗时 : 0
+2019-07-03 04:39:16 -返回值 : main
+2019-07-03 04:39:16 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 04:39:16 -HTTP METHOD : GET
+2019-07-03 04:39:16 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 04:39:16 -参数 : []
+2019-07-03 04:39:16 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 04:39:16 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 04:39:16 -<==      Total: 0
+2019-07-03 04:39:16 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 04:39:16 -==> Parameters: 138(Long), 0(String)
+2019-07-03 04:39:16 -<==      Total: 1
+2019-07-03 04:39:16 -耗时 : 9
+2019-07-03 04:39:16 -返回值 : com.bootdo.common.utils.PageUtils@7525c1ca
+2019-07-03 04:39:16 -请求地址 : http://localhost:8124/main
+2019-07-03 04:39:16 -HTTP METHOD : GET
+2019-07-03 04:39:16 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 04:39:16 -参数 : []
+2019-07-03 04:39:16 -耗时 : 0
+2019-07-03 04:39:16 -返回值 : main
+2019-07-03 04:49:04 -请求地址 : http://localhost:8124/index
+2019-07-03 04:49:04 -HTTP METHOD : GET
+2019-07-03 04:49:04 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 04:49:04 -参数 : [{}]
+2019-07-03 04:49:04 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 04:49:04 -==> Parameters: 138(Long)
+2019-07-03 04:49:04 -<==      Total: 27
+2019-07-03 04:49:04 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 04:49:04 -==> Parameters: null
+2019-07-03 04:49:04 -<==      Total: 0
+2019-07-03 04:49:04 -耗时 : 10
+2019-07-03 04:49:04 -返回值 : index_v1
+2019-07-03 04:49:04 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 04:49:04 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 10(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 04:49:04.595(Timestamp)
+2019-07-03 04:49:04 -<==    Updates: 1
+2019-07-03 04:49:04 -请求地址 : http://localhost:8124/main
+2019-07-03 04:49:04 -HTTP METHOD : GET
+2019-07-03 04:49:04 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 04:49:04 -参数 : []
+2019-07-03 04:49:04 -耗时 : 0
+2019-07-03 04:49:04 -返回值 : main
+2019-07-03 04:49:05 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 04:49:05 -HTTP METHOD : GET
+2019-07-03 04:49:05 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 04:49:05 -参数 : []
+2019-07-03 04:49:05 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 04:49:05 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 04:49:05 -<==      Total: 0
+2019-07-03 04:49:05 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 04:49:05 -==> Parameters: 138(Long), 0(String)
+2019-07-03 04:49:05 -<==      Total: 1
+2019-07-03 04:49:05 -耗时 : 3
+2019-07-03 04:49:05 -返回值 : com.bootdo.common.utils.PageUtils@6e6ab874
+2019-07-03 04:49:05 -请求地址 : http://localhost:8124/main
+2019-07-03 04:49:05 -HTTP METHOD : GET
+2019-07-03 04:49:05 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 04:49:05 -参数 : []
+2019-07-03 04:49:05 -耗时 : 0
+2019-07-03 04:49:05 -返回值 : main
+2019-07-03 05:00:05 -Validating all active sessions...
+2019-07-03 05:00:05 -Finished session validation.  No sessions were stopped.
+2019-07-03 05:00:39 -WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 20 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(20)-CONNECTED(20)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 237], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 39], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 5, completed tasks = 1730]
+2019-07-03 05:22:12 -请求地址 : http://localhost:8124/login;JSESSIONID=51056790-5788-444e-87ce-e28e25a00e34
+2019-07-03 05:22:12 -HTTP METHOD : GET
+2019-07-03 05:22:12 -CLASS_METHOD : com.bootdo.system.controller.LoginController.login
+2019-07-03 05:22:12 -参数 : [{}]
+2019-07-03 05:22:12 -耗时 : 0
+2019-07-03 05:22:12 -返回值 : login
+2019-07-03 05:22:13 -请求地址 : http://localhost:8124/login
+2019-07-03 05:22:13 -HTTP METHOD : GET
+2019-07-03 05:22:13 -CLASS_METHOD : com.bootdo.system.controller.LoginController.login
+2019-07-03 05:22:13 -参数 : [{}]
+2019-07-03 05:22:13 -耗时 : 0
+2019-07-03 05:22:13 -返回值 : login
+2019-07-03 05:22:14 -请求地址 : http://localhost:8124/login
+2019-07-03 05:22:14 -HTTP METHOD : POST
+2019-07-03 05:22:14 -CLASS_METHOD : com.bootdo.system.controller.LoginController.ajaxLogin
+2019-07-03 05:22:14 -参数 : [shany, 123456]
+2019-07-03 05:22:14 -==>  Preparing: select `user_id`,`username`,`name`,`password`,`dept_id`,`email`,`mobile`,`status`,`user_id_create`,`gmt_create`,`gmt_modified`,`sex`,`birth`,`pic_id`,`live_address`,`hobby`,`province`,`city`,`district` from sys_user WHERE username = ? order by user_id desc 
+2019-07-03 05:22:14 -==> Parameters: shany(String)
+2019-07-03 05:22:14 -<==      Total: 1
+2019-07-03 05:22:14 -耗时 : 5
+2019-07-03 05:22:14 -返回值 : {msg=操作成功, code=0}
+2019-07-03 05:22:14 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 05:22:14 -==> Parameters: 138(Long), shany(String), 登录(String), 5(Integer), com.bootdo.system.controller.LoginController.ajaxLogin()(String), null, 127.0.0.1(String), 2019-07-03 05:22:14.339(Timestamp)
+2019-07-03 05:22:14 -<==    Updates: 1
+2019-07-03 05:22:14 -请求地址 : http://localhost:8124/index
+2019-07-03 05:22:14 -HTTP METHOD : GET
+2019-07-03 05:22:14 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 05:22:14 -参数 : [{}]
+2019-07-03 05:22:14 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 05:22:14 -==> Parameters: 138(Long)
+2019-07-03 05:22:14 -<==      Total: 27
+2019-07-03 05:22:14 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 05:22:14 -==> Parameters: null
+2019-07-03 05:22:14 -<==      Total: 0
+2019-07-03 05:22:14 -耗时 : 7
+2019-07-03 05:22:14 -返回值 : index_v1
+2019-07-03 05:22:14 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 05:22:14 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 7(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 05:22:14.364(Timestamp)
+2019-07-03 05:22:14 -<==    Updates: 1
+2019-07-03 05:22:14 -请求地址 : http://localhost:8124/main
+2019-07-03 05:22:14 -HTTP METHOD : GET
+2019-07-03 05:22:14 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:22:14 -参数 : []
+2019-07-03 05:22:14 -耗时 : 0
+2019-07-03 05:22:14 -返回值 : main
+2019-07-03 05:22:14 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 05:22:14 -HTTP METHOD : GET
+2019-07-03 05:22:14 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 05:22:14 -参数 : []
+2019-07-03 05:22:14 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 05:22:14 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 05:22:14 -<==      Total: 0
+2019-07-03 05:22:14 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 05:22:14 -==> Parameters: 138(Long), 0(String)
+2019-07-03 05:22:14 -<==      Total: 1
+2019-07-03 05:22:14 -耗时 : 3
+2019-07-03 05:22:14 -返回值 : com.bootdo.common.utils.PageUtils@430048a6
+2019-07-03 05:22:14 -请求地址 : http://localhost:8124/main
+2019-07-03 05:22:14 -HTTP METHOD : GET
+2019-07-03 05:22:14 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:22:14 -参数 : []
+2019-07-03 05:22:14 -耗时 : 1
+2019-07-03 05:22:14 -返回值 : main
+2019-07-03 05:22:19 -请求地址 : http://localhost:8124/index
+2019-07-03 05:22:19 -HTTP METHOD : GET
+2019-07-03 05:22:19 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 05:22:19 -参数 : [{}]
+2019-07-03 05:22:19 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 05:22:19 -==> Parameters: 138(Long)
+2019-07-03 05:22:19 -<==      Total: 27
+2019-07-03 05:22:19 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 05:22:19 -==> Parameters: null
+2019-07-03 05:22:19 -<==      Total: 0
+2019-07-03 05:22:19 -耗时 : 7
+2019-07-03 05:22:19 -返回值 : index_v1
+2019-07-03 05:22:19 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 05:22:19 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 7(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 05:22:19.17(Timestamp)
+2019-07-03 05:22:19 -<==    Updates: 1
+2019-07-03 05:22:19 -请求地址 : http://localhost:8124/main
+2019-07-03 05:22:19 -HTTP METHOD : GET
+2019-07-03 05:22:19 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:22:19 -参数 : []
+2019-07-03 05:22:19 -耗时 : 0
+2019-07-03 05:22:19 -返回值 : main
+2019-07-03 05:22:19 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 05:22:19 -HTTP METHOD : GET
+2019-07-03 05:22:19 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 05:22:19 -参数 : []
+2019-07-03 05:22:19 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 05:22:19 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 05:22:19 -<==      Total: 0
+2019-07-03 05:22:19 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 05:22:19 -==> Parameters: 138(Long), 0(String)
+2019-07-03 05:22:19 -<==      Total: 1
+2019-07-03 05:22:19 -耗时 : 3
+2019-07-03 05:22:19 -返回值 : com.bootdo.common.utils.PageUtils@4b6b59ea
+2019-07-03 05:22:19 -请求地址 : http://localhost:8124/main
+2019-07-03 05:22:19 -HTTP METHOD : GET
+2019-07-03 05:22:19 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:22:19 -参数 : []
+2019-07-03 05:22:19 -耗时 : 0
+2019-07-03 05:22:19 -返回值 : main
+2019-07-03 05:24:37 -请求地址 : http://localhost:8124/index
+2019-07-03 05:24:37 -HTTP METHOD : GET
+2019-07-03 05:24:37 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 05:24:37 -参数 : [{}]
+2019-07-03 05:24:37 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 05:24:37 -==> Parameters: 138(Long)
+2019-07-03 05:24:37 -<==      Total: 27
+2019-07-03 05:24:37 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 05:24:37 -==> Parameters: null
+2019-07-03 05:24:37 -<==      Total: 0
+2019-07-03 05:24:37 -耗时 : 6
+2019-07-03 05:24:37 -返回值 : index_v1
+2019-07-03 05:24:37 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 05:24:37 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 6(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 05:24:37.266(Timestamp)
+2019-07-03 05:24:37 -<==    Updates: 1
+2019-07-03 05:24:37 -请求地址 : http://localhost:8124/main
+2019-07-03 05:24:37 -HTTP METHOD : GET
+2019-07-03 05:24:37 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:24:37 -参数 : []
+2019-07-03 05:24:37 -耗时 : 0
+2019-07-03 05:24:37 -返回值 : main
+2019-07-03 05:24:37 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 05:24:37 -HTTP METHOD : GET
+2019-07-03 05:24:37 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 05:24:37 -参数 : []
+2019-07-03 05:24:37 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 05:24:37 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 05:24:37 -<==      Total: 0
+2019-07-03 05:24:37 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 05:24:37 -==> Parameters: 138(Long), 0(String)
+2019-07-03 05:24:37 -<==      Total: 1
+2019-07-03 05:24:37 -耗时 : 2
+2019-07-03 05:24:37 -返回值 : com.bootdo.common.utils.PageUtils@20cc07cd
+2019-07-03 05:24:37 -请求地址 : http://localhost:8124/main
+2019-07-03 05:24:37 -HTTP METHOD : GET
+2019-07-03 05:24:37 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:24:37 -参数 : []
+2019-07-03 05:24:37 -耗时 : 0
+2019-07-03 05:24:37 -返回值 : main
+2019-07-03 05:25:07 -请求地址 : http://localhost:8124/index
+2019-07-03 05:25:07 -HTTP METHOD : GET
+2019-07-03 05:25:07 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 05:25:07 -参数 : [{}]
+2019-07-03 05:25:07 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 05:25:07 -==> Parameters: 138(Long)
+2019-07-03 05:25:07 -<==      Total: 27
+2019-07-03 05:25:07 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 05:25:07 -==> Parameters: null
+2019-07-03 05:25:07 -<==      Total: 0
+2019-07-03 05:25:07 -耗时 : 6
+2019-07-03 05:25:07 -返回值 : index_v1
+2019-07-03 05:25:07 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 05:25:07 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 6(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 05:25:07.616(Timestamp)
+2019-07-03 05:25:07 -<==    Updates: 1
+2019-07-03 05:25:07 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 05:25:07 -HTTP METHOD : GET
+2019-07-03 05:25:07 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 05:25:07 -参数 : []
+2019-07-03 05:25:07 -请求地址 : http://localhost:8124/main
+2019-07-03 05:25:07 -HTTP METHOD : GET
+2019-07-03 05:25:07 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:25:07 -参数 : []
+2019-07-03 05:25:07 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 05:25:07 -耗时 : 0
+2019-07-03 05:25:07 -返回值 : main
+2019-07-03 05:25:07 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 05:25:07 -<==      Total: 0
+2019-07-03 05:25:07 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 05:25:07 -==> Parameters: 138(Long), 0(String)
+2019-07-03 05:25:07 -<==      Total: 1
+2019-07-03 05:25:07 -耗时 : 5
+2019-07-03 05:25:07 -返回值 : com.bootdo.common.utils.PageUtils@1adc5941
+2019-07-03 05:25:07 -请求地址 : http://localhost:8124/main
+2019-07-03 05:25:07 -HTTP METHOD : GET
+2019-07-03 05:25:07 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:25:07 -参数 : []
+2019-07-03 05:25:07 -耗时 : 0
+2019-07-03 05:25:07 -返回值 : main
+2019-07-03 05:25:43 -请求地址 : http://localhost:8124/index
+2019-07-03 05:25:43 -HTTP METHOD : GET
+2019-07-03 05:25:43 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 05:25:43 -参数 : [{}]
+2019-07-03 05:25:43 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 05:25:43 -==> Parameters: 138(Long)
+2019-07-03 05:25:43 -<==      Total: 27
+2019-07-03 05:25:43 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 05:25:43 -==> Parameters: null
+2019-07-03 05:25:43 -<==      Total: 0
+2019-07-03 05:25:43 -耗时 : 6
+2019-07-03 05:25:43 -返回值 : index_v1
+2019-07-03 05:25:43 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 05:25:43 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 6(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 05:25:43.839(Timestamp)
+2019-07-03 05:25:43 -<==    Updates: 1
+2019-07-03 05:25:44 -请求地址 : http://localhost:8124/main
+2019-07-03 05:25:44 -HTTP METHOD : GET
+2019-07-03 05:25:44 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:25:44 -参数 : []
+2019-07-03 05:25:44 -耗时 : 0
+2019-07-03 05:25:44 -返回值 : main
+2019-07-03 05:25:44 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 05:25:44 -HTTP METHOD : GET
+2019-07-03 05:25:44 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 05:25:44 -参数 : []
+2019-07-03 05:25:44 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 05:25:44 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 05:25:44 -<==      Total: 0
+2019-07-03 05:25:44 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 05:25:44 -==> Parameters: 138(Long), 0(String)
+2019-07-03 05:25:44 -<==      Total: 1
+2019-07-03 05:25:44 -耗时 : 3
+2019-07-03 05:25:44 -返回值 : com.bootdo.common.utils.PageUtils@657d8419
+2019-07-03 05:25:44 -请求地址 : http://localhost:8124/main
+2019-07-03 05:25:44 -HTTP METHOD : GET
+2019-07-03 05:25:44 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:25:44 -参数 : []
+2019-07-03 05:25:44 -耗时 : 1
+2019-07-03 05:25:44 -返回值 : main
+2019-07-03 05:26:10 -请求地址 : http://localhost:8124/index
+2019-07-03 05:26:10 -HTTP METHOD : GET
+2019-07-03 05:26:10 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 05:26:10 -参数 : [{}]
+2019-07-03 05:26:10 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 05:26:10 -==> Parameters: 138(Long)
+2019-07-03 05:26:10 -<==      Total: 27
+2019-07-03 05:26:10 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 05:26:10 -==> Parameters: null
+2019-07-03 05:26:10 -<==      Total: 0
+2019-07-03 05:26:10 -耗时 : 6
+2019-07-03 05:26:10 -返回值 : index_v1
+2019-07-03 05:26:10 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 05:26:10 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 6(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 05:26:10.585(Timestamp)
+2019-07-03 05:26:10 -<==    Updates: 1
+2019-07-03 05:26:10 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 05:26:10 -HTTP METHOD : GET
+2019-07-03 05:26:10 -请求地址 : http://localhost:8124/main
+2019-07-03 05:26:10 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 05:26:10 -HTTP METHOD : GET
+2019-07-03 05:26:10 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:26:10 -参数 : []
+2019-07-03 05:26:10 -参数 : []
+2019-07-03 05:26:10 -耗时 : 0
+2019-07-03 05:26:10 -返回值 : main
+2019-07-03 05:26:10 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 05:26:10 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 05:26:10 -<==      Total: 0
+2019-07-03 05:26:10 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 05:26:10 -==> Parameters: 138(Long), 0(String)
+2019-07-03 05:26:10 -<==      Total: 1
+2019-07-03 05:26:10 -耗时 : 5
+2019-07-03 05:26:10 -返回值 : com.bootdo.common.utils.PageUtils@32aa4d9e
+2019-07-03 05:26:10 -请求地址 : http://localhost:8124/main
+2019-07-03 05:26:10 -HTTP METHOD : GET
+2019-07-03 05:26:10 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:26:10 -参数 : []
+2019-07-03 05:26:10 -耗时 : 1
+2019-07-03 05:26:10 -返回值 : main
+2019-07-03 05:27:01 -请求地址 : http://localhost:8124/index
+2019-07-03 05:27:01 -HTTP METHOD : GET
+2019-07-03 05:27:01 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 05:27:01 -参数 : [{}]
+2019-07-03 05:27:01 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 05:27:01 -==> Parameters: 138(Long)
+2019-07-03 05:27:01 -<==      Total: 27
+2019-07-03 05:27:01 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 05:27:01 -==> Parameters: null
+2019-07-03 05:27:01 -<==      Total: 0
+2019-07-03 05:27:01 -耗时 : 7
+2019-07-03 05:27:01 -返回值 : index_v1
+2019-07-03 05:27:01 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 05:27:01 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 7(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 05:27:01.182(Timestamp)
+2019-07-03 05:27:01 -<==    Updates: 1
+2019-07-03 05:27:01 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 05:27:01 -HTTP METHOD : GET
+2019-07-03 05:27:01 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 05:27:01 -参数 : []
+2019-07-03 05:27:01 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 05:27:01 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 05:27:01 -请求地址 : http://localhost:8124/main
+2019-07-03 05:27:01 -<==      Total: 0
+2019-07-03 05:27:01 -HTTP METHOD : GET
+2019-07-03 05:27:01 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:27:01 -参数 : []
+2019-07-03 05:27:01 -耗时 : 5
+2019-07-03 05:27:01 -返回值 : main
+2019-07-03 05:27:01 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 05:27:01 -==> Parameters: 138(Long), 0(String)
+2019-07-03 05:27:01 -<==      Total: 1
+2019-07-03 05:27:01 -耗时 : 6
+2019-07-03 05:27:01 -返回值 : com.bootdo.common.utils.PageUtils@7243ded
+2019-07-03 05:27:01 -请求地址 : http://localhost:8124/main
+2019-07-03 05:27:01 -HTTP METHOD : GET
+2019-07-03 05:27:01 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:27:01 -参数 : []
+2019-07-03 05:27:01 -耗时 : 1
+2019-07-03 05:27:01 -返回值 : main
+2019-07-03 05:27:13 -请求地址 : http://localhost:8124/index
+2019-07-03 05:27:13 -HTTP METHOD : GET
+2019-07-03 05:27:13 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 05:27:13 -参数 : [{}]
+2019-07-03 05:27:13 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 05:27:13 -==> Parameters: 138(Long)
+2019-07-03 05:27:13 -<==      Total: 27
+2019-07-03 05:27:13 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 05:27:13 -==> Parameters: null
+2019-07-03 05:27:13 -<==      Total: 0
+2019-07-03 05:27:13 -耗时 : 5
+2019-07-03 05:27:13 -返回值 : index_v1
+2019-07-03 05:27:13 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 05:27:13 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 5(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 05:27:13.05(Timestamp)
+2019-07-03 05:27:13 -<==    Updates: 1
+2019-07-03 05:27:13 -请求地址 : http://localhost:8124/main
+2019-07-03 05:27:13 -HTTP METHOD : GET
+2019-07-03 05:27:13 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:27:13 -参数 : []
+2019-07-03 05:27:13 -耗时 : 1
+2019-07-03 05:27:13 -返回值 : main
+2019-07-03 05:27:13 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 05:27:13 -HTTP METHOD : GET
+2019-07-03 05:27:13 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 05:27:13 -参数 : []
+2019-07-03 05:27:13 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 05:27:13 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 05:27:13 -<==      Total: 0
+2019-07-03 05:27:13 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 05:27:13 -==> Parameters: 138(Long), 0(String)
+2019-07-03 05:27:13 -<==      Total: 1
+2019-07-03 05:27:13 -耗时 : 3
+2019-07-03 05:27:13 -返回值 : com.bootdo.common.utils.PageUtils@408181c3
+2019-07-03 05:27:13 -请求地址 : http://localhost:8124/main
+2019-07-03 05:27:13 -HTTP METHOD : GET
+2019-07-03 05:27:13 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:27:13 -参数 : []
+2019-07-03 05:27:13 -耗时 : 0
+2019-07-03 05:27:13 -返回值 : main
+2019-07-03 05:28:29 -请求地址 : http://localhost:8124/index
+2019-07-03 05:28:29 -HTTP METHOD : GET
+2019-07-03 05:28:29 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 05:28:29 -参数 : [{}]
+2019-07-03 05:28:29 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 05:28:29 -==> Parameters: 138(Long)
+2019-07-03 05:28:29 -<==      Total: 27
+2019-07-03 05:28:29 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 05:28:29 -==> Parameters: null
+2019-07-03 05:28:29 -<==      Total: 0
+2019-07-03 05:28:29 -耗时 : 6
+2019-07-03 05:28:29 -返回值 : index_v1
+2019-07-03 05:28:29 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 05:28:29 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 6(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 05:28:29.793(Timestamp)
+2019-07-03 05:28:29 -<==    Updates: 1
+2019-07-03 05:28:29 -请求地址 : http://localhost:8124/main
+2019-07-03 05:28:29 -HTTP METHOD : GET
+2019-07-03 05:28:29 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:28:29 -参数 : []
+2019-07-03 05:28:29 -耗时 : 1
+2019-07-03 05:28:29 -返回值 : main
+2019-07-03 05:28:29 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 05:28:29 -HTTP METHOD : GET
+2019-07-03 05:28:29 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 05:28:29 -参数 : []
+2019-07-03 05:28:29 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 05:28:29 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 05:28:29 -<==      Total: 0
+2019-07-03 05:28:29 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 05:28:29 -==> Parameters: 138(Long), 0(String)
+2019-07-03 05:28:29 -<==      Total: 1
+2019-07-03 05:28:29 -耗时 : 5
+2019-07-03 05:28:29 -返回值 : com.bootdo.common.utils.PageUtils@4a5ff856
+2019-07-03 05:28:30 -请求地址 : http://localhost:8124/main
+2019-07-03 05:28:30 -HTTP METHOD : GET
+2019-07-03 05:28:30 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:28:30 -参数 : []
+2019-07-03 05:28:30 -耗时 : 0
+2019-07-03 05:28:30 -返回值 : main
+2019-07-03 05:29:34 -请求地址 : http://localhost:8124/blog
+2019-07-03 05:29:34 -HTTP METHOD : GET
+2019-07-03 05:29:34 -CLASS_METHOD : com.bootdo.blog.controller.BlogController.blog
+2019-07-03 05:29:34 -参数 : []
+2019-07-03 05:29:34 -耗时 : 1
+2019-07-03 05:29:34 -返回值 : blog/index/main
+2019-07-03 05:29:34 -请求地址 : http://localhost:8124/blog/open/list
+2019-07-03 05:29:34 -HTTP METHOD : GET
+2019-07-03 05:29:34 -CLASS_METHOD : com.bootdo.blog.controller.BlogController.opentList
+2019-07-03 05:29:34 -参数 : [{type=article, limit=10, offset=0}]
+2019-07-03 05:29:34 -==>  Preparing: select `cid`,`title`,`slug`,`created`,`modified`,`content`,`type`,`tags`,`categories`,`hits`,`comments_num`,`allow_comment`,`allow_ping`,`allow_feed`,`status`,`author`,`gtm_create`,`gtm_modified` from blog_content WHERE type = ? order by cid desc limit 0, 10 
+2019-07-03 05:29:34 -==> Parameters: article(String)
+2019-07-03 05:29:34 -<==      Total: 10
+2019-07-03 05:29:34 -==>  Preparing: select count(*) from blog_content WHERE type = ? 
+2019-07-03 05:29:34 -==> Parameters: article(String)
+2019-07-03 05:29:34 -<==      Total: 1
+2019-07-03 05:29:34 -耗时 : 10
+2019-07-03 05:29:34 -返回值 : com.bootdo.common.utils.PageUtils@3a6b9377
+2019-07-03 05:29:36 -请求地址 : http://localhost:8124/login
+2019-07-03 05:29:36 -HTTP METHOD : GET
+2019-07-03 05:29:36 -CLASS_METHOD : com.bootdo.system.controller.LoginController.login
+2019-07-03 05:29:36 -参数 : [{}]
+2019-07-03 05:29:36 -耗时 : 0
+2019-07-03 05:29:36 -返回值 : login
+2019-07-03 05:29:37 -请求地址 : http://localhost:8124/login
+2019-07-03 05:29:37 -HTTP METHOD : POST
+2019-07-03 05:29:37 -CLASS_METHOD : com.bootdo.system.controller.LoginController.ajaxLogin
+2019-07-03 05:29:37 -参数 : [shany, 123456]
+2019-07-03 05:29:37 -==>  Preparing: select `user_id`,`username`,`name`,`password`,`dept_id`,`email`,`mobile`,`status`,`user_id_create`,`gmt_create`,`gmt_modified`,`sex`,`birth`,`pic_id`,`live_address`,`hobby`,`province`,`city`,`district` from sys_user WHERE username = ? order by user_id desc 
+2019-07-03 05:29:37 -==> Parameters: shany(String)
+2019-07-03 05:29:37 -<==      Total: 1
+2019-07-03 05:29:37 -耗时 : 2
+2019-07-03 05:29:37 -返回值 : {msg=操作成功, code=0}
+2019-07-03 05:29:37 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 05:29:37 -==> Parameters: 138(Long), shany(String), 登录(String), 2(Integer), com.bootdo.system.controller.LoginController.ajaxLogin()(String), null, 127.0.0.1(String), 2019-07-03 05:29:37.163(Timestamp)
+2019-07-03 05:29:37 -<==    Updates: 1
+2019-07-03 05:29:37 -请求地址 : http://localhost:8124/index
+2019-07-03 05:29:37 -HTTP METHOD : GET
+2019-07-03 05:29:37 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 05:29:37 -参数 : [{}]
+2019-07-03 05:29:37 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 05:29:37 -==> Parameters: 138(Long)
+2019-07-03 05:29:37 -<==      Total: 27
+2019-07-03 05:29:37 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 05:29:37 -==> Parameters: null
+2019-07-03 05:29:37 -<==      Total: 0
+2019-07-03 05:29:37 -耗时 : 6
+2019-07-03 05:29:37 -返回值 : index_v1
+2019-07-03 05:29:37 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 05:29:37 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 6(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 05:29:37.186(Timestamp)
+2019-07-03 05:29:37 -<==    Updates: 1
+2019-07-03 05:29:37 -请求地址 : http://localhost:8124/main
+2019-07-03 05:29:37 -HTTP METHOD : GET
+2019-07-03 05:29:37 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:29:37 -参数 : []
+2019-07-03 05:29:37 -耗时 : 1
+2019-07-03 05:29:37 -返回值 : main
+2019-07-03 05:29:37 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 05:29:37 -HTTP METHOD : GET
+2019-07-03 05:29:37 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 05:29:37 -参数 : []
+2019-07-03 05:29:37 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 05:29:37 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 05:29:37 -<==      Total: 0
+2019-07-03 05:29:37 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 05:29:37 -==> Parameters: 138(Long), 0(String)
+2019-07-03 05:29:37 -<==      Total: 1
+2019-07-03 05:29:37 -耗时 : 3
+2019-07-03 05:29:37 -返回值 : com.bootdo.common.utils.PageUtils@c63eb51
+2019-07-03 05:29:37 -请求地址 : http://localhost:8124/main
+2019-07-03 05:29:37 -HTTP METHOD : GET
+2019-07-03 05:29:37 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 05:29:37 -参数 : []
+2019-07-03 05:29:37 -耗时 : 0
+2019-07-03 05:29:37 -返回值 : main
+2019-07-03 05:30:39 -WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 357], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 59], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 5, completed tasks = 2159]
+2019-07-03 06:00:00 -[INFO]:you need relax 2 min
+2019-07-03 06:00:05 -Validating all active sessions...
+2019-07-03 06:00:05 -Finished session validation.  [1] sessions were stopped.
+2019-07-03 06:00:39 -WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 357], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 59], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 5, completed tasks = 2593]
+2019-07-03 06:30:39 -WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 357], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 59], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 5, completed tasks = 3026]
+2019-07-03 07:00:05 -Validating all active sessions...
+2019-07-03 07:00:05 -Finished session validation.  No sessions were stopped.
+2019-07-03 07:00:39 -WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 357], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 59], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 5, completed tasks = 3459]
+2019-07-03 07:30:39 -WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 357], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 59], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 5, completed tasks = 3892]
+2019-07-03 08:00:00 -[INFO]:you need relax 2 min
+2019-07-03 08:00:05 -Validating all active sessions...
+2019-07-03 08:00:05 -Finished session validation.  No sessions were stopped.
+2019-07-03 08:00:39 -WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 357], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 59], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 5, completed tasks = 4326]
+2019-07-03 08:30:39 -WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 357], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 59], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 5, completed tasks = 4759]
+2019-07-03 09:00:05 -Validating all active sessions...
+2019-07-03 09:00:05 -Finished session validation.  No sessions were stopped.
+2019-07-03 09:00:39 -WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 357], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 59], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 5, completed tasks = 5192]
+2019-07-03 09:30:39 -WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 357], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 59], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 5, completed tasks = 5625]
+2019-07-03 10:00:00 -[INFO]:you need relax 2 min
+2019-07-03 10:00:05 -Validating all active sessions...
+2019-07-03 10:00:05 -Finished session validation.  No sessions were stopped.
+2019-07-03 10:00:39 -WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 360], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 60], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 4, completed tasks = 6015]
+2019-07-03 10:30:39 -WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 360], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 60], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 4, completed tasks = 6376]
+2019-07-03 11:00:05 -Validating all active sessions...
+2019-07-03 11:00:05 -Finished session validation.  No sessions were stopped.
+2019-07-03 11:00:39 -WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 360], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 60], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 4, completed tasks = 6737]
+2019-07-03 11:30:39 -WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 360], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 60], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 4, completed tasks = 7098]
+2019-07-03 12:00:00 -[INFO]:you need relax 2 min
+2019-07-03 12:00:05 -Validating all active sessions...
+2019-07-03 12:00:05 -Finished session validation.  No sessions were stopped.
+2019-07-03 12:00:39 -WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 360], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 60], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 4, completed tasks = 7460]
+2019-07-03 12:30:39 -WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 360], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 60], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 4, completed tasks = 7821]
+2019-07-03 13:00:05 -Validating all active sessions...
+2019-07-03 13:00:05 -Finished session validation.  No sessions were stopped.
+2019-07-03 13:00:39 -WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 360], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 60], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 4, completed tasks = 8182]
+2019-07-03 13:30:39 -WebSocketSession[0 current WS(0)-HttpStream(0)-HttpPoll(0), 30 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(30)-CONNECTED(30)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 360], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 60], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 4, completed tasks = 8543]
+2019-07-03 13:32:53 -请求地址 : http://localhost:8124/blog
+2019-07-03 13:32:53 -HTTP METHOD : GET
+2019-07-03 13:32:53 -CLASS_METHOD : com.bootdo.blog.controller.BlogController.blog
+2019-07-03 13:32:53 -参数 : []
+2019-07-03 13:32:53 -耗时 : 1
+2019-07-03 13:32:53 -返回值 : blog/index/main
+2019-07-03 13:32:54 -请求地址 : http://localhost:8124/blog/open/list
+2019-07-03 13:32:54 -HTTP METHOD : GET
+2019-07-03 13:32:54 -CLASS_METHOD : com.bootdo.blog.controller.BlogController.opentList
+2019-07-03 13:32:54 -参数 : [{type=article, limit=10, offset=0}]
+2019-07-03 13:32:54 -==>  Preparing: select `cid`,`title`,`slug`,`created`,`modified`,`content`,`type`,`tags`,`categories`,`hits`,`comments_num`,`allow_comment`,`allow_ping`,`allow_feed`,`status`,`author`,`gtm_create`,`gtm_modified` from blog_content WHERE type = ? order by cid desc limit 0, 10 
+2019-07-03 13:32:54 -==> Parameters: article(String)
+2019-07-03 13:32:54 -<==      Total: 10
+2019-07-03 13:32:54 -==>  Preparing: select count(*) from blog_content WHERE type = ? 
+2019-07-03 13:32:54 -==> Parameters: article(String)
+2019-07-03 13:32:54 -<==      Total: 1
+2019-07-03 13:32:54 -耗时 : 58
+2019-07-03 13:32:54 -返回值 : com.bootdo.common.utils.PageUtils@1035d993
+2019-07-03 13:32:56 -请求地址 : http://localhost:8124/login
+2019-07-03 13:32:56 -HTTP METHOD : GET
+2019-07-03 13:32:56 -CLASS_METHOD : com.bootdo.system.controller.LoginController.login
+2019-07-03 13:32:56 -参数 : [{}]
+2019-07-03 13:32:56 -耗时 : 0
+2019-07-03 13:32:56 -返回值 : login
+2019-07-03 13:32:57 -请求地址 : http://localhost:8124/login
+2019-07-03 13:32:57 -HTTP METHOD : POST
+2019-07-03 13:32:57 -CLASS_METHOD : com.bootdo.system.controller.LoginController.ajaxLogin
+2019-07-03 13:32:57 -参数 : [shany, 123456]
+2019-07-03 13:32:57 -==>  Preparing: select `user_id`,`username`,`name`,`password`,`dept_id`,`email`,`mobile`,`status`,`user_id_create`,`gmt_create`,`gmt_modified`,`sex`,`birth`,`pic_id`,`live_address`,`hobby`,`province`,`city`,`district` from sys_user WHERE username = ? order by user_id desc 
+2019-07-03 13:32:57 -==> Parameters: shany(String)
+2019-07-03 13:32:57 -<==      Total: 1
+2019-07-03 13:32:57 -耗时 : 5
+2019-07-03 13:32:57 -返回值 : {msg=操作成功, code=0}
+2019-07-03 13:32:57 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 13:32:57 -==> Parameters: 138(Long), shany(String), 登录(String), 5(Integer), com.bootdo.system.controller.LoginController.ajaxLogin()(String), null, 127.0.0.1(String), 2019-07-03 13:32:57.784(Timestamp)
+2019-07-03 13:32:57 -<==    Updates: 1
+2019-07-03 13:32:57 -请求地址 : http://localhost:8124/index
+2019-07-03 13:32:57 -HTTP METHOD : GET
+2019-07-03 13:32:57 -CLASS_METHOD : com.bootdo.system.controller.LoginController.index
+2019-07-03 13:32:57 -参数 : [{}]
+2019-07-03 13:32:57 -==>  Preparing: select distinct m.menu_id , parent_id, name, url, perms,`type`,icon,order_num,gmt_create, gmt_modified from sys_menu m left join sys_role_menu rm on m.menu_id = rm.menu_id left join sys_user_role ur on rm.role_id =ur.role_id where ur.user_id = ? and m.type in(0,1) order by m.order_num 
+2019-07-03 13:32:57 -==> Parameters: 138(Long)
+2019-07-03 13:32:57 -<==      Total: 27
+2019-07-03 13:32:57 -==>  Preparing: select `id`,`type`,`url`,`create_date` from sys_file where id = ? 
+2019-07-03 13:32:57 -==> Parameters: null
+2019-07-03 13:32:57 -<==      Total: 0
+2019-07-03 13:32:57 -耗时 : 11
+2019-07-03 13:32:57 -返回值 : index_v1
+2019-07-03 13:32:57 -==>  Preparing: insert into sys_log ( `user_id`, `username`, `operation`, `time`, `method`, `params`, `ip`, `gmt_create` ) values ( ?, ?, ?, ?, ?, ?, ?, ? ) 
+2019-07-03 13:32:57 -==> Parameters: 138(Long), shany(String), 请求访问主页(String), 11(Integer), com.bootdo.system.controller.LoginController.index()(String), null, 127.0.0.1(String), 2019-07-03 13:32:57.816(Timestamp)
+2019-07-03 13:32:57 -<==    Updates: 1
+2019-07-03 13:32:57 -请求地址 : http://localhost:8124/main
+2019-07-03 13:32:57 -请求地址 : http://localhost:8124/oa/notify/message
+2019-07-03 13:32:57 -HTTP METHOD : GET
+2019-07-03 13:32:57 -HTTP METHOD : GET
+2019-07-03 13:32:57 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 13:32:57 -参数 : []
+2019-07-03 13:32:57 -耗时 : 0
+2019-07-03 13:32:57 -返回值 : main
+2019-07-03 13:32:57 -CLASS_METHOD : com.bootdo.oa.controller.NotifyController.message
+2019-07-03 13:32:57 -参数 : []
+2019-07-03 13:32:57 -==>  Preparing: select DISTINCT n.id ,`type`,`title`,`content`,`files`,r.is_read,`status`,`create_by`,`create_date`,`update_by`,`update_date`,`remarks`,`del_flag` from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id WHERE r.is_read = ? and r.user_id = ? order by is_read ASC, update_date DESC limit ?, ? 
+2019-07-03 13:32:57 -==> Parameters: 0(String), 138(Long), 0(Integer), 3(Integer)
+2019-07-03 13:32:57 -<==      Total: 0
+2019-07-03 13:32:57 -==>  Preparing: select count(*) from oa_notify_record r right JOIN oa_notify n on r.notify_id = n.id where r.user_id =? and r.is_read = ? 
+2019-07-03 13:32:57 -==> Parameters: 138(Long), 0(String)
+2019-07-03 13:32:57 -<==      Total: 1
+2019-07-03 13:32:57 -耗时 : 6
+2019-07-03 13:32:57 -返回值 : com.bootdo.common.utils.PageUtils@35c937cd
+2019-07-03 13:32:57 -请求地址 : http://localhost:8124/main
+2019-07-03 13:32:57 -HTTP METHOD : GET
+2019-07-03 13:32:57 -CLASS_METHOD : com.bootdo.system.controller.LoginController.main
+2019-07-03 13:32:57 -参数 : []
+2019-07-03 13:32:57 -耗时 : 0
+2019-07-03 13:32:57 -返回值 : main
+2019-07-03 14:00:00 -[INFO]:you need relax 2 min
+2019-07-03 14:00:05 -Validating all active sessions...
+2019-07-03 14:00:05 -Finished session validation.  No sessions were stopped.
+2019-07-03 14:00:39 -WebSocketSession[1 current WS(1)-HttpStream(0)-HttpPoll(0), 31 total, 0 closed abnormally (0 connect failure, 0 send limit, 0 transport error)], stompSubProtocol[processed CONNECT(31)-CONNECTED(31)-DISCONNECT(0)], stompBrokerRelay[null], inboundChannel[pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 369], outboundChannelpool size = 0, active threads = 0, queued tasks = 0, completed tasks = 61], sockJsScheduler[pool size = 6, active threads = 1, queued tasks = 5, completed tasks = 8971]
