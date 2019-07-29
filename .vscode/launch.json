@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - ShanyUtils",
+            "request": "launch",
+            "mainClass": "com.bootdo.common.utils.ShanyUtils",
+            "projectName": "bootdo"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - LastTime",
             "request": "launch",
             "mainClass": "com.bootdo.shany.test.LastTime",
