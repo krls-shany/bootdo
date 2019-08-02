@@ -19,12 +19,39 @@ function destroy() {
     console.clear();
 }
 
-
+/**
+ * 配置默认定时器
+ * @param {json} json 
+ */
 function timeListen(json) {
     //对传入的json判断解析为
     
-    cycleTime = setInterval(()=>jsonAnalysis(json,'cycleTime',{}),1000);
+    cycleTime = setInterval(()=>jsonAnalysis(json,'cycleTime',()=>{
+        //--------默认的定时器函数
+        
+        check();
 
+        //判断状态
+        if(status=='stop'){
+            stop();
+        }else if(status=='destroy'){
+            stop(); //待定
+            destroy();
+        }
+
+
+    }),1000);
+
+}
+
+/**
+ * 检查程序方法有无异常
+ * @param {json} json 
+ */
+function check(json) {
+    if(1==0){
+        status='destroy';
+    }
 }
 
 /**
