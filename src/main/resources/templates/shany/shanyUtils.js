@@ -39,6 +39,13 @@ function jsonAnalysis(json,info,data) {
         return data;
     }
     json=toJson(json);
+    var result=eval('json.'+info);
+    //如果json中包含吃数据，则返回
+    if(isNull(result)){
+        return result;
+    }
+    //默认返回data
+    return data;
 }
 
 /**
@@ -57,8 +64,6 @@ function config(json) {
 function stop(params) {
     
 }
-
-
 
 /**
  * 判断输入数据是否为空
