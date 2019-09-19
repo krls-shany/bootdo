@@ -2,6 +2,7 @@ package com.bootdo.common.controller;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -55,6 +56,11 @@ public class ShanyController extends BaseController{
     @GetMapping("/kg/info")
     public KgDO kgInfo(@RequestParam(value = "type")String type,@RequestParam(value = "info")String info ){
         log.info("info:"+info+"  type:"+type);
+        Map<String,Object> map=new HashMap<>();
+        map.put("info", info);
+        map.put("type", type);
+        String result=service.kgTest(map);
+        log.info("result:"+result);
         return new KgDO("0124", "info:"+info, new Date(), "successful");
     }
 
