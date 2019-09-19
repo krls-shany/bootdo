@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>kg测试页面</title>
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Additional fonts for this theme -->
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+        type='text/css'>
+    <link
+        href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this theme -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <!-- Temporary navbar container fix until Bootstrap 4 is patched -->
+    <style>
+        .navbar-toggler {
+            z-index: 1;
+        }
+
+        @media (max-width : 576px) {
+            nav>.container {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h3>hi shany</h3>
+    <table>
+        <tr>
+            <td></td><td></td>
+        </tr>
+
+    </table>
+    <input type="text" id="in_text" name="in_text">
+    <input type="button" value="in" id="in_button" onclick="sendInfo()">
+    <input type="text" id="out_text" name="out_text">
+    <br/>
+    
+
+</body>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/plugins/layer/layer.js"></script>
+<script src="/js/ajax-util.js"></script>
+<script src="/js/appjs/blog/clean-blog.min.js"></script>
+<script src="/js/plugins/summernote/summernote.min.js"></script>
+<script src="/js/plugins/summernote/summernote-zh-CN.js"></script>
+<script type="text/javascript">
+    function sendInfo(){
+        $.ajax({
+			url : 'kg/info',
+			method : 'get',
+            dataType : 'json',
+            data:{"type":"type","info":$("[id='in_text']").val()},
+			success : function(data) {
+                $("[id='in_text']").val(null)
+                $("#out_text").val(data.result);
+                console.log("shany=>date.result:"+data.result);
+			}
+		});
+    }
+</script>
+
+</html>

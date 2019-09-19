@@ -18,4 +18,12 @@ public interface ShanyService{
      */
     String getHide(Map<String, Object> map);
 
+    /**
+     * kg测试
+     * @param map
+     * @return
+     * @author shany
+     */
+    String kgTest(Map<String, Object> map);
+
 }
