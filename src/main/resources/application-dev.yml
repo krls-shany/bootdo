@@ -1,7 +1,7 @@
 bootdo:
   uploadPath: D:/WorkSpace/DownLoad/
-  username: shany
-  password: 123456
+  username: 
+  password: 
 logging:
   level:
     root: info
